@@ -1,0 +1,10 @@
+{
+  "orderId": "payu_order_id",
+  "refund": {
+    "description": "your description",
+    "amount": null,
+    "extRefundId": null,
+    "bankDescription": null,
+    "type": null
+  }
+}

@@ -1,0 +1,3 @@
+1.) Install WCF http activation (Windows Features, Framework node)
+
+2.) "C:\Windows\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\servicemodelreg" -i

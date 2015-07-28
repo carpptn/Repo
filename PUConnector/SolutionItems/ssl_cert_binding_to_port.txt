@@ -1,0 +1,7 @@
+﻿import certificate to MACHINE STORE (not current user store)
+
+netsh http show sslcert
+
+netsh http add sslcert ipport=0.0.0.0:90 certhash=‎‎3021dd92b811ffa899cfd0b6ea8db9ad70de93df appid={5b904e2a-e620-4a57-a059-5970f8e54977}
+
+netsh http delete sslcert ipport=0.0.0.0:90

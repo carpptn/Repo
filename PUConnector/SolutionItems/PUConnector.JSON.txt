@@ -1,0 +1,302 @@
+Niniejszy plik stanowi dokumentację struktur danych w formacie JSON używanych podczas komunikacji z PayU.
+
+Pola w strukturach zostały wypełnione przykładowymi wartościami.
+Pola wymagane oznaczone zostały gwiazdką *.
+Pola wymagane w obrębie danej sekcji oznaczone zostały wykrzyknikiem !.
+
+Komentarze znajdujące się po znakach //  należy usunąć aby wykorzystać strukturę w rzeczywistej komunikacji z PayU.
+
+Zachęcamy również do zapoznania się z dokumentacją PayU:
+http://developers.payu.com/pl/restapi.html#references_api_parameters
+
+
+OrderCreateRequest - żądanie utworzenia nowego zamówienia/transakcji:
+
+{
+  "notifyUrl": "http://mydomain.pl/OrderNotify/Receive",	// * Adres pod który będą przesyłane powiadomienia
+  "customerIp": "90.1.1.2",									// * Adres IP kupującego
+  "description": "Transakcja testowa",						// * Opis zamówienia
+  "totalAmount": 1000,										// * Całkowita wartość zamówienia podana w najmniejszej jednostce dla danej waluty np. w groszach dla PLN czyli "1000" oznacza 10 zł.
+  "currencyCode": "PLN",									// * Symbol waluty używanej przez sklep w standardzie ISO 4217, np. "PLN".
+  "products": [												// * Sekcja zawiera dane o produktach
+    {
+      "name": "Produkt1",									// ! Nazwa
+      "unitPrice": 500,										// ! Cena jednostkowa
+      "quantity": 1											// ! Liczba sztuk
+    },
+    {
+      "name": "Produkt2",
+      "unitPrice": 500,
+      "quantity": 1
+    }
+  ],
+  "extOrderId": "e32443ce-1ee5-48d1-a83d-ed14e217d6a8",		// Identyfikator zamówienia w systemie sprzedawcy
+  "merchantPosId": "123456",								// Identyfikator punktu płatności na którym zostanie wykonana płatność. W przypadku niewypełnienia pola: PUConnector wstawi wartość z parametru merchantPosId z pliku konfiguracji
+  "reqId": "e32443ce-1ee5-48d1-a83d-ed14e217d6a8",			// Identyfikator żądania
+  "refReqId": "e32443ce-1ee5-48d1-a83d-ed14e217d6a8",		// Identyfikator początkowego żądania przy wysyłaniu sekwencji komunikatów.
+  "orderUrl": "http://mydomain.pl/Shop/Product1,			// URL zamówienia na stronie sklepu.
+  "validityTime": 123,										// Czas w trakcie którego możliwe jest dokończenie zamówienia w sekundach.
+  "additionalDescription": "dodatkowy opis",				// Dodatkowy opis zamówienia
+  "continueUrl": "http://mydomain.pl/PaymentCompleted", 	// Adres na który kupujący zostanie przekierowany po zakończeniu procesu płatności. W przypadku braku autoryzacji do URL'a doklejany jest parametr error z wartością 501
+  "settings": {
+    "invoiceDisabled": false								// Pole przyjmujące wartości z zakresu {true, false}. Ustawienie wartości true umożliwia usunięcie przełącznika "Chcę otrzymać fakturę" ze strony podsumowania płatności.
+  },
+  "shippingMethods": [										// Sekcja zawiera informacje o metodach dostawy
+    {
+      "country": "US",										// ! Kod kraju
+      "price": 1000,										// ! Koszt
+      "name": "Fedex Parcel USA"							// ! Nazwa sposobu dostawy
+    },
+    {
+      "country": "CA",
+      "price": "1000,
+      "name": "Fedex Parcel Canada"
+    }	
+  ],
+  "buyer": {												// Sekcja przechowująca dane kupującego. 
+    "customerId": null,										// Id kupującego
+    "extCustomerId": "abcvz-asda-das-fs",					// Identyfikator kupującego używany w systemie klienta
+    "email": "someone@email.pl",							// ! Adres email kupującego
+    "phone": "48507123123",									// Numer telefonu
+    "firstName": "Jan",										// Imię kupującego
+    "lastName": "Kowalski",									// Nazwisko kupującego
+    "nin": "90010118992",									// PESEL lub zagraniczny ekwiwalent
+    "delivery": {											// Sekcja zawierająca dane adresowe do wysyłki towaru 
+      "street": "Malownicza",								// ! Ulica
+      "postalBox": "23",									// Skrytka pocztowa
+      "postalCode": "10-200",								// ! Kod pocztowy
+      "city": "Warszawa,									// ! Miasto
+      "state": "Mazowieckie",								// Województwo
+      "countryCode": "PL",									// ! Kod kraju
+      "name": "adres 1",									// Nazwa adresu
+      "recipientName": "Kowalski",							// ! Nazwisko adresata
+      "recipientEmail": "email@email.pl",					// Adres email adresata
+      "recipientPhone": "48603109109"						// Numer telefonu adresata
+    },
+    "billing": {											// Sekcja zawierająca dane niezbędne do wystawienia rachunku. 
+      "street": "Malownicza",								// ! Ulica
+      "postalBox": "23",									// Skrytka pocztowa
+      "postalCode": "10-200",								// ! Kod pocztowy
+      "city": "Warszawa,									// ! Miasto
+      "state": "Mazowieckie",								// Województwo
+      "countryCode": "PL",									// ! Kod kraju
+      "name": "adres 1",									// Nazwa adresu
+      "recipientName": "Kowalski",							// ! Nazwisko adresata
+      "recipientEmail": "email@email.pl",					// Adres email adresata
+      "recipientPhone": "48603109109"						// Numer telefonu adresata
+    },
+    "invoice": {
+      "street": "Malownicza",								// ! Ulica
+      "postalBox": "23",									// Skrytka pocztowa
+      "postalCode": "10-200",								// ! Kod pocztowy
+      "city": "Warszawa,									// ! Miasto
+      "state": "Mazowieckie",								// Województwo
+      "countryCode": "PL",									// ! Kod kraju
+      "name": "adres 1",									// Nazwa adresu
+      "recipientName": "Kowalski",							// ! Nazwisko adresata
+      "recipientEmail": "email@email.pl",					// Adres email adresata
+      "recipientPhone": "48603109109"						// Numer telefonu adresata
+      "tin": "5991292478",									// NIP lub zagraniczny odpowiednik
+      "eInvoiceRequested": false							// Flaga określająca czy żądano faktury
+    }
+  }
+}
+
+
+OrderCreateResponse - odpowiedź na żądanie utworzenia nowego zamówienia/transakcji:
+
+{
+	"redirectUri":"https://secure.payu.com/pl/standard/co/summary?..",					// Adres pod który należy przekierować kupującego
+	"orderId":"3QFDHABCBD150415GUEST000P01",											// Identyfikator zamówienia nadany przez system PayU
+	"extOrderId":"e32443ce-1ee5-48d1-a83d-ed14e217d6a8",								// Zewnętrzny identyfikator zamówienia (nadawany przez sklep)
+	"status":{																			// Obiekt typu status odpowiedzi
+		"statusCode":"SUCCESS",															// Kod odpowiedzi
+		"statusDesc":"Order has incorrect status. Transition is impossible",			// Opis statusu odpowiedzi
+		"code":"108",																	// Numeryczny kod błędu
+		"codeLiteral":"ERROR_VALUE_INVALID"												// Znakowy kod błędu
+		}
+}
+
+
+OrderCancelRequest - żądanie anulowania zamówienia/transakcji:
+
+{
+  "orderId": "3QFDHABCBD150415GUEST000P01"												// * Identyfikator zamówienia nadany przez system PayU
+}
+
+
+OrderCancelResponse - odpowiedź na żądanie anulowania zamówienia/transakcji:
+
+{
+	"orderId":"3QFDHABCBD150415GUEST000P01",											// Identyfikator zamówienia nadany przez system PayU
+	"extOrderId":"e32443ce-1ee5-48d1-a83d-ed14e217d6a8",								// Zewnętrzny identyfikator zamówienia (nadawany przez sklep)
+	"status":{																			// Obiekt typu status odpowiedzi
+		"statusCode":"SUCCESS",															// Kod odpowiedzi
+		"statusDesc":"Order has incorrect status. Transition is impossible",			// Opis statusu odpowiedzi
+		"code":"108",																	// Numeryczny kod błędu
+		"codeLiteral":"ERROR_VALUE_INVALID"												// Znakowy kod błędu
+		}
+}
+
+
+OrderRetrieveRequest - żądanie pobrania szczegółów zamówienia/transakcji:
+
+{
+  "orderId": "3QFDHABCBD150415GUEST000P01"												// * Identyfikator zamówienia nadany przez system PayU
+}
+
+
+OrderRetrieveResponse - odpowiedź na żądanie pobrania szczegółów zamówienia/transakcji:
+
+{
+	"orders":[
+		{
+			"orderId":"BJD6RNZ84T150415GUEST000P01",									// Identyfikator zamówienia nadany przez system PayU
+			"extOrderId":"1881ae21-eb30-4e7c-b9fb-c7ee27b6bda8",						// Zewnętrzny identyfikator zamówienia (nadawany przez sklep)
+			"orderCreateDate":"2015-04-15T15:08:54.907+02:00",							// Znacznik czasu dla utworzenia zamówienia
+			"notifyUrl":"https://www.mydomain.com/OrderNotify/Receive",					// Adres pod który będą przesyłane powiadomienia
+			"orderId": "230423409284390",												// URL zamówienia na stronie sklepu
+			"customerIp":"127.0.0.1",													// Adres IP kupującego
+			"merchantPosId":"188826",													// Identyfikator punktu płatności na którym zostanie wykonana płatność
+			"description":"opis testowy",												// Opis zamówienia
+			"additionalDescription": "dodatkowy opis",									// Dodatkowy opis zamówienia
+			"currencyCode":"PLN",														// Symbol waluty używanej przez sklep w standardzie ISO 4217, np. "PLN".
+			"totalAmount":"1000",														// Całkowity koszt zamówienia
+			"status":"PENDING",															// Status zamówienia
+			"products":[																// Sekcja zawiera dane o produktach
+				{
+					"name":"test product",												// Nazwa
+					"unitPrice":"500",													// Cena jednostkowa
+					"quantity":"1"														// Liczba sztuk
+				},
+				{
+					"name":"test product2",
+					"unitPrice":"500",
+					"quantity":"1"
+				}
+			  ],
+			  "shippingMethods": [										// Sekcja zawiera informacje o metodach dostawy
+				{
+				  "country": "US",										// Kod kraju
+				  "price": 1000,										// Koszt
+				  "name": "Fedex Parcel USA"							// Nazwa sposobu dostawy
+				},
+				{
+				  "country": "CA",
+				  "price": "1000,
+				  "name": "Fedex Parcel Canada"
+				}	
+			  ],
+			  "buyer": {												// Sekcja przechowująca dane kupującego. 
+				"customerId": null,										// Id kupującego
+				"extCustomerId": "abcvz-asda-das-fs",					// Identyfikator kupującego używany w systemie klienta
+				"email": "someone@email.pl",							// Adres email kupującego
+				"phone": "48507123123",									// Numer telefonu
+				"firstName": "Jan",										// Imię kupującego
+				"lastName": "Kowalski",									// Nazwisko kupującego
+				"nin": "90010118992",									// PESEL lub zagraniczny ekwiwalent
+				"delivery": {											// Sekcja zawierająca dane adresowe do wysyłki towaru 
+				  "street": "Malownicza",								// Ulica
+				  "postalBox": "23",									// Skrytka pocztowa
+				  "postalCode": "10-200",								// Kod pocztowy
+				  "city": "Warszawa,									// Miasto
+				  "state": "Mazowieckie",								// Województwo
+				  "countryCode": "PL",									// Kod kraju
+				  "name": "adres 1",									// Nazwa adresu
+				  "recipientName": "Kowalski",							// Nazwisko adresata
+				  "recipientEmail": "email@email.pl",					// Adres email adresata
+				  "recipientPhone": "48603109109"						// Numer telefonu adresata
+				},
+				"billing": {											// Sekcja zawierająca dane niezbędne do wystawienia rachunku. 
+				  "street": "Malownicza",								// Ulica
+				  "postalBox": "23",									// Skrytka pocztowa
+				  "postalCode": "10-200",								// Kod pocztowy
+				  "city": "Warszawa,									// Miasto
+				  "state": "Mazowieckie",								// Województwo
+				  "countryCode": "PL",									// Kod kraju
+				  "name": "adres 1",									// Nazwa adresu
+				  "recipientName": "Kowalski",							// Nazwisko adresata
+				  "recipientEmail": "email@email.pl",					// Adres email adresata
+				  "recipientPhone": "48603109109"						// Numer telefonu adresata
+				},
+				"invoice": {
+				  "street": "Malownicza",								// Ulica
+				  "postalBox": "23",									// Skrytka pocztowa
+				  "postalCode": "10-200",								// Kod pocztowy
+				  "city": "Warszawa,									// Miasto
+				  "state": "Mazowieckie",								// Województwo
+				  "countryCode": "PL",									// Kod kraju
+				  "name": "adres 1",									// Nazwa adresu
+				  "recipientName": "Kowalski",							// Nazwisko adresata
+				  "recipientEmail": "email@email.pl",					// Adres email adresata
+				  "recipientPhone": "48603109109"						// Numer telefonu adresata
+				  "tin": "5991292478",									// NIP lub zagraniczny odpowiednik
+				  "eInvoiceRequested": false							// Flaga określająca czy żądano faktury
+				}
+			  }				
+		}],
+	"status":{																			// Obiekt typu status odpowiedzi
+		"statusCode":"SUCCESS",															// Kod odpowiedzi
+		"statusDesc":"Order has incorrect status. Transition is impossible",			// Opis statusu odpowiedzi
+		"code":"108",																	// Numeryczny kod błędu
+		"codeLiteral":"ERROR_VALUE_INVALID"												// Znakowy kod błędu
+		}
+}
+
+
+OrderStatusUpdateRequest - żądanie aktualizacji statusu zamówienia/transakcji:
+
+{
+  "orderId": "3QFDHABCBD150415GUEST000P01",												// * Identyfikator zamówienia w systemie PayU
+  "orderStatus": "COMPLETED"															// * Nowy status zamówienia. Możliwa wartość: COMPLETED
+}
+
+
+OrderStatusUpdateResponse - odpowiedź na żądanie aktualizacji statusu zamówienia/transakcji:
+
+{
+	"status":{																			// Obiekt typu status odpowiedzi
+		"statusCode":"SUCCESS",															// Kod odpowiedzi
+		"statusDesc":"Order has incorrect status. Transition is impossible",			// Opis statusu odpowiedzi
+		"code":"108",																	// Numeryczny kod błędu
+		"codeLiteral":"ERROR_VALUE_INVALID"												// Znakowy kod błędu
+		}
+}
+
+
+RefundCreateRequest - żądanie utworzenia zwrotu środków (refund) dla zamówienia/transakcji:
+
+{
+  "orderId": "3QFDHABCBD150415GUEST000P01",												// * Identyfikator zamówienia w systemie PayU
+  "refund": {																			// * Element typu RefundInfoType, zawierający szczegółowe dane na temat uznania
+    "description": "zwrot z powodu uszkodzenia towaru",									// * Opis wykonywanego uznania
+    "amount": 1000,																		// Kwota uznania. Jeśli zostanie pusta, zostanie wykonany zwrot całości zapłaconych środków
+    "extRefundId": "1881ae21-eb30-4e7c-b9fb-c7ee27b6bda8",								// Identyfikator zwrotu w systemie klienta, unikalny w obrębie zamówienia
+    "bankDescription": "zwrot z powodu uszkodzenia towaru",								// Tytuł przelewu bankowego
+    "type": "REFUND_PAYMENT_STANDARD"													// Typ operacji (możliwa wartość: REFUND_PAYMENT_STANDARD)
+  }
+}
+
+
+RefundCreateResponse - odpowiedź na żądanie utworzenia zwrotu środków (refund) dla zamówienia/transakcji:
+
+{
+	"orderId": "3QFDHABCBD150415GUEST000P01",											// Identyfikator zamówienia dla którego będzie realizowany zwrot
+	"refund": {
+		refundId: "3QFDHABCBD150415GUEST000123",										// Identyfikator zwrotu
+		extRefundId: "1881ae21-eb30-4e7c-b9fb-c7ee27b6bda8",							// Zewnetrzny identyfikator zwrotu nadany w komunikacie RefundCreateRequest
+		amount: 1000,																	// Kwota uznania
+		currencyCode: "PLN",															// Kod waluty (ISO 4217)
+		description: "opis",															// Opis wykonywanego uznania
+		creationDateTime: "2015-04-15T15:08:54.907+02:00",								// Data utworzenia zwrotu
+		status: "FINALIZED",															// Kod statusu przetwarzania (PENDING, CANCELED, FINALIZED)
+		statusDateTime: "2015-04-15T15:08:54.907+02:00"									// Data statusu
+		
+	},
+	"status":{																			// Obiekt typu status odpowiedzi
+		"statusCode":"SUCCESS",															// Kod odpowiedzi
+		"statusDesc":"Order has incorrect status. Transition is impossible",			// Opis statusu odpowiedzi
+		"code":"108",																	// Numeryczny kod błędu
+		"codeLiteral":"ERROR_VALUE_INVALID"												// Znakowy kod błędu
+		}
+}

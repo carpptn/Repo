@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{087B33FA-7C9C-4544-8E61-10B5EC25CEEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PUConnector.Commons</RootNamespace>
+    <AssemblyName>PUConnector.Commons</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PUConnector.Commons.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiModel\BuyerBillingRecord.cs" />
+    <Compile Include="ApiModel\BuyerDeliveryRecord.cs" />
+    <Compile Include="ApiModel\BuyerInvoiceRecord.cs" />
+    <Compile Include="ApiModel\BuyerRecord.cs" />
+    <Compile Include="ApiModel\Enums\OrderStatuses.cs" />
+    <Compile Include="ApiModel\Enums\RefundStatuses.cs" />
+    <Compile Include="ApiModel\Enums\RefundTypes.cs" />
+    <Compile Include="ApiModel\Enums\ResponseStatuses.cs" />
+    <Compile Include="ApiModel\RefundNotification.cs" />
+    <Compile Include="ApiModel\OrderNotification.cs" />
+    <Compile Include="ApiModel\OrderCancelRequest.cs" />
+    <Compile Include="ApiModel\OrderCancelResponse.cs" />
+    <Compile Include="ApiModel\OrderCreateRequest.cs" />
+    <Compile Include="ApiModel\OrderCreateResponse.cs" />
+    <Compile Include="ApiModel\OrderRecord.cs" />
+    <Compile Include="ApiModel\OrderRetrieveRequest.cs" />
+    <Compile Include="ApiModel\OrderRetrieveResponse.cs" />
+    <Compile Include="ApiModel\OrderStatusUpdateRequest.cs" />
+    <Compile Include="ApiModel\OrderStatusUpdateResponse.cs" />
+    <Compile Include="ApiModel\ProductRecord.cs" />
+    <Compile Include="ApiModel\PropertyRecord.cs" />
+    <Compile Include="ApiModel\RefundCreateRequest.cs" />
+    <Compile Include="ApiModel\RefundCreateResponse.cs" />
+    <Compile Include="ApiModel\RefundInfoType.cs" />
+    <Compile Include="ApiModel\RefundRecord_Type.cs" />
+    <Compile Include="ApiModel\SettingsRecord.cs" />
+    <Compile Include="ApiModel\ShippingMethodRecord.cs" />
+    <Compile Include="ApiModel\StatusRecord.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security.cs" />
+    <Compile Include="WCF\ErrorHandler.cs" />
+    <Compile Include="WCF\ErrorHandlerElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

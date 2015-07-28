@@ -1,0 +1,52 @@
+
+CREATE TABLE [PUOrder] (
+    [Id]          BIGINT         IDENTITY (1, 1) NOT NULL,
+    [Created]     DATETIME       NOT NULL,
+	[Updated]     DATETIME       NULL,
+    [ExtOrderId]  NVARCHAR (100) NOT NULL,
+    [OrderId]     NVARCHAR (100) NULL,
+    [Status]      NVARCHAR (100) NULL,
+    [OrderObject] NVARCHAR (4000) NULL,
+    CONSTRAINT [PK_PUOrder] PRIMARY KEY ([Id])
+);
+
+GO
+
+CREATE TABLE [PUCommLog] (
+    [Id]              BIGINT         IDENTITY (1, 1) NOT NULL,
+    [PUOrderId]		  BIGINT         NOT NULL,
+	[RequestType]     NVARCHAR(100)  NULL,
+    [RequestDate]     DATETIME       NULL,
+    [RequestContent]  NVARCHAR (4000) NULL,
+	[ResponseType]    NVARCHAR(100)  NULL,
+    [ResponseDate]    DATETIME       NULL,
+    [ResponseContent] NVARCHAR (4000) NULL,
+    CONSTRAINT [PK_PUCommLog] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PUCommLog_PUOrder] FOREIGN KEY ([PUOrderId]) REFERENCES [PUOrder] ([Id])
+);
+
+GO
+
+CREATE TABLE [PURefund] (
+    [Id]           BIGINT         IDENTITY (1, 1) NOT NULL,
+	[PUOrderId]    BIGINT	      NOT NULL,
+    [Created]      DATETIME       NOT NULL,
+	[Updated]      DATETIME       NULL,
+    [ExtRefundId]  NVARCHAR (100) NOT NULL,
+    [RefundId]     NVARCHAR (100) NULL,
+    [Status]       NVARCHAR (100) NULL,
+    [RefundObject] NVARCHAR (4000) NULL,
+    CONSTRAINT [PK_PURefund] PRIMARY KEY ([Id]), 
+    CONSTRAINT [FK_PURefund_PUOrder] FOREIGN KEY ([PUOrderId]) REFERENCES [PUOrder]([Id])
+);
+
+GO
+
+CREATE UNIQUE INDEX [IX_PUOrder_ExtOrderId] ON [PUOrder] ([ExtOrderId])
+GO
+CREATE UNIQUE INDEX [IX_PURefund_ExtRefundId] ON [PURefund] ([ExtRefundId])
+GO
+CREATE INDEX [IX_PUOrder_OrderId] ON [PUOrder] ([OrderId])
+GO
+CREATE INDEX [IX_PURefund_RefundId] ON [PURefund] ([RefundId])
+GO

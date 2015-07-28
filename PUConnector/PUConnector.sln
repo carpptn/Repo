@@ -1,0 +1,145 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Commons", "PUConnector.Commons\PUConnector.Commons.csproj", "{087B33FA-7C9C-4544-8E61-10B5EC25CEEF}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PUConnector.Db", "PUConnector.Db\PUConnector.Db.sqlproj", "{7F25EADF-FBCB-43AD-B358-1C844092FFF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Db.Repository", "PUConnector.Db.Repository\PUConnector.Db.Repository.csproj", "{1A3B2CB1-BAE4-45EC-8011-50CC329CA43D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Api", "PUConnector.Api\PUConnector.Api.csproj", "{5F1EF883-401C-4F1E-A637-AC7C48D76F52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Api.Cmd", "PUConnector.Api.Cmd\PUConnector.Api.Cmd.csproj", "{509E02FF-E654-4273-8314-85CE6D40D81B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Api.UI", "PUConnector.Api.UI\PUConnector.Api.UI.csproj", "{93B82C43-48D9-484D-A7D2-106649CBEC17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.OrdersManager", "PUConnector.OrdersManager\PUConnector.OrdersManager.csproj", "{F9F29DE0-AA96-4A75-9A77-524ADCD21B5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.SoapProxy.Host", "PUConnector.SoapProxy.Host\PUConnector.SoapProxy.Host.csproj", "{2ADF5BB7-2B49-4CC6-B712-A6121B443F75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7BC4E1A3-4A32-4F27-B754-EE62A2411B1E}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\eventlog.txt = SolutionItems\eventlog.txt
+		SolutionItems\PUConnector.Documentation.chm = SolutionItems\PUConnector.Documentation.chm
+		SolutionItems\PUConnector.docx = SolutionItems\PUConnector.docx
+		SolutionItems\PUConnector.JSON.txt = SolutionItems\PUConnector.JSON.txt
+		SolutionItems\PUConnector.png = SolutionItems\PUConnector.png
+		SolutionItems\PUConnector.vsdx = SolutionItems\PUConnector.vsdx
+		SolutionItems\ssl_cert_binding_to_port.txt = SolutionItems\ssl_cert_binding_to_port.txt
+		SolutionItems\wcf_activation_iis.txt = SolutionItems\wcf_activation_iis.txt
+		SolutionItems\wcf_url_acl.txt = SolutionItems\wcf_url_acl.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Notifications.Host", "PUConnector.Notifications.Host\PUConnector.Notifications.Host.csproj", "{CFE3B041-3E77-4F2B-A5D5-9C1C0A663D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.Notifications.Service", "PUConnector.Notifications.Service\PUConnector.Notifications.Service.csproj", "{A1210BD7-4613-4915-85EB-F7A28CE975B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUConnector.SoapProxy.Service", "PUConnector.SoapProxy.Service\PUConnector.SoapProxy.Service.csproj", "{E3EE2FB6-EF96-4FD9-A49C-CC9B6145C93E}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "PUConnector.Documentation", "PUConnector.Documentation\PUConnector.Documentation.shfbproj", "{86E60423-A8C5-4CAD-8114-F37CDBB14972}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs40
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PUConnector.Api.Cmd\\PUConnector.Api.Cmd.csproj
+		SccProjectName1 = PUConnector.Api.Cmd
+		SccLocalPath1 = PUConnector.Api.Cmd
+		SccProjectUniqueName2 = PUConnector.Api.UI\\PUConnector.Api.UI.csproj
+		SccProjectName2 = PUConnector.Api.UI
+		SccLocalPath2 = PUConnector.Api.UI
+		SccProjectUniqueName3 = PUConnector.Api\\PUConnector.Api.csproj
+		SccProjectName3 = PUConnector.Api
+		SccLocalPath3 = PUConnector.Api
+		SccProjectUniqueName4 = PUConnector.Commons\\PUConnector.Commons.csproj
+		SccProjectName4 = PUConnector.Commons
+		SccLocalPath4 = PUConnector.Commons
+		SccProjectUniqueName5 = PUConnector.Db.Repository\\PUConnector.Db.Repository.csproj
+		SccProjectName5 = PUConnector.Db.Repository
+		SccLocalPath5 = PUConnector.Db.Repository
+		SccProjectUniqueName6 = PUConnector.Db\\PUConnector.Db.sqlproj
+		SccProjectName6 = PUConnector.Db
+		SccLocalPath6 = PUConnector.Db
+		SccProjectUniqueName7 = PUConnector.Documentation\\PUConnector.Documentation.shfbproj
+		SccProjectName7 = PUConnector.Documentation
+		SccLocalPath7 = PUConnector.Documentation
+		SccProjectUniqueName8 = PUConnector.Notifications.Host\\PUConnector.Notifications.Host.csproj
+		SccProjectName8 = PUConnector.Notifications.Host
+		SccLocalPath8 = PUConnector.Notifications.Host
+		SccProjectUniqueName9 = PUConnector.Notifications.Service\\PUConnector.Notifications.Service.csproj
+		SccProjectName9 = PUConnector.Notifications.Service
+		SccLocalPath9 = PUConnector.Notifications.Service
+		SccProjectUniqueName10 = PUConnector.OrdersManager\\PUConnector.OrdersManager.csproj
+		SccProjectName10 = PUConnector.OrdersManager
+		SccLocalPath10 = PUConnector.OrdersManager
+		SccProjectUniqueName11 = PUConnector.SoapProxy.Host\\PUConnector.SoapProxy.Host.csproj
+		SccProjectName11 = PUConnector.SoapProxy.Host
+		SccLocalPath11 = PUConnector.SoapProxy.Host
+		SccProjectUniqueName12 = PUConnector.SoapProxy.Service\\PUConnector.SoapProxy.Service.csproj
+		SccProjectName12 = PUConnector.SoapProxy.Service
+		SccLocalPath12 = PUConnector.SoapProxy.Service
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{087B33FA-7C9C-4544-8E61-10B5EC25CEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{087B33FA-7C9C-4544-8E61-10B5EC25CEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{087B33FA-7C9C-4544-8E61-10B5EC25CEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{087B33FA-7C9C-4544-8E61-10B5EC25CEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F25EADF-FBCB-43AD-B358-1C844092FFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F25EADF-FBCB-43AD-B358-1C844092FFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F25EADF-FBCB-43AD-B358-1C844092FFF4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7F25EADF-FBCB-43AD-B358-1C844092FFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F25EADF-FBCB-43AD-B358-1C844092FFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F25EADF-FBCB-43AD-B358-1C844092FFF4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1A3B2CB1-BAE4-45EC-8011-50CC329CA43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3B2CB1-BAE4-45EC-8011-50CC329CA43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3B2CB1-BAE4-45EC-8011-50CC329CA43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3B2CB1-BAE4-45EC-8011-50CC329CA43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1EF883-401C-4F1E-A637-AC7C48D76F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1EF883-401C-4F1E-A637-AC7C48D76F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1EF883-401C-4F1E-A637-AC7C48D76F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1EF883-401C-4F1E-A637-AC7C48D76F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509E02FF-E654-4273-8314-85CE6D40D81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509E02FF-E654-4273-8314-85CE6D40D81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509E02FF-E654-4273-8314-85CE6D40D81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509E02FF-E654-4273-8314-85CE6D40D81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B82C43-48D9-484D-A7D2-106649CBEC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B82C43-48D9-484D-A7D2-106649CBEC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B82C43-48D9-484D-A7D2-106649CBEC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B82C43-48D9-484D-A7D2-106649CBEC17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F29DE0-AA96-4A75-9A77-524ADCD21B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F29DE0-AA96-4A75-9A77-524ADCD21B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F29DE0-AA96-4A75-9A77-524ADCD21B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F29DE0-AA96-4A75-9A77-524ADCD21B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ADF5BB7-2B49-4CC6-B712-A6121B443F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ADF5BB7-2B49-4CC6-B712-A6121B443F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ADF5BB7-2B49-4CC6-B712-A6121B443F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ADF5BB7-2B49-4CC6-B712-A6121B443F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE3B041-3E77-4F2B-A5D5-9C1C0A663D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE3B041-3E77-4F2B-A5D5-9C1C0A663D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE3B041-3E77-4F2B-A5D5-9C1C0A663D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE3B041-3E77-4F2B-A5D5-9C1C0A663D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1210BD7-4613-4915-85EB-F7A28CE975B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1210BD7-4613-4915-85EB-F7A28CE975B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1210BD7-4613-4915-85EB-F7A28CE975B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1210BD7-4613-4915-85EB-F7A28CE975B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3EE2FB6-EF96-4FD9-A49C-CC9B6145C93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EE2FB6-EF96-4FD9-A49C-CC9B6145C93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EE2FB6-EF96-4FD9-A49C-CC9B6145C93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EE2FB6-EF96-4FD9-A49C-CC9B6145C93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E60423-A8C5-4CAD-8114-F37CDBB14972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E60423-A8C5-4CAD-8114-F37CDBB14972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E60423-A8C5-4CAD-8114-F37CDBB14972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E60423-A8C5-4CAD-8114-F37CDBB14972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

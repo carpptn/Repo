@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="2e589c85-9f43-42dc-9b1a-a06597f00522" ChangeDateTime="03/30/2015 09:53:55">
+    <Property Name="ElementName" Value="[dbo].[PUCommLog].[PUTransactionId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PUCommLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PUOrderId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4135e4a1-0368-4fd4-812d-e3c09f768f3a" ChangeDateTime="04/15/2015 02:48:09">
+    <Property Name="ElementName" Value="[dbo].[PURefund].[IX_PURefund_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[dbo].[PURefund]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_PURefund_RefundId]" />
+  </Operation>
+</Operations>

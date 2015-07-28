@@ -1,0 +1,27 @@
+{
+  "notifyUrl": "http(s)://www.mydomain.com/OrderNotify/Receive",
+  "customerIp": "127.0.0.1",
+  "description": "your description",
+  "totalAmount": 1000,
+  "currencyCode": "PLN",
+  "products": [
+    {
+      "name": "test product",
+      "unitPrice": 1000,
+      "quantity": 1
+    }
+  ],
+  "extOrderId": null,
+  "merchantPosId": null,
+  "reqId": null,
+  "refReqId": null,
+  "orderUrl": null,
+  "validityTime": null,
+  "additionalDescription": null,
+  "continueUrl": null,
+  "settings": {
+    "invoiceDisabled": false
+  },
+  "shippingMethods": null,
+  "buyer": null
+}

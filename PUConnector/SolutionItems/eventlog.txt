@@ -1,0 +1,1 @@
+eventcreate /T ERROR /ID 1 /L APPLICATION /SO PUConnector /D "Unhandled exception"

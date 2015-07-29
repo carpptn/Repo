@@ -27,12 +27,11 @@ namespace PUConnector.Api
         private const string refundRes = "api/v2_1/orders/{0}/refund";
         private const string statusRes = "api/v2_1/orders/{0}/status";
 
-        private TraceSource ts = new TraceSource("PUConnector.Connector");
-
 
         // variables
 
         private string apiEndpountBaseUrl = "https://secure.payu.com";
+        private TraceSource ts = new TraceSource("PUConnector.Connector");
 
 
         // properties

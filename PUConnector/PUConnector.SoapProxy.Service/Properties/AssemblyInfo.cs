@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PUConnector")]
 [assembly: AssemblyProduct("PUConnector.SoapProxy.Service")]
-[assembly: AssemblyCopyright("Copyright © 2015 PUConnector")]
+[assembly: AssemblyCopyright("Tomasz Leszczyński, leszczynski@fplorer.com")]
 [assembly: AssemblyTrademark("PUConnector")]
 [assembly: AssemblyCulture("")]
 
